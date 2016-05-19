@@ -1,7 +1,7 @@
 import redux from 'redux';
 import { createStore } from 'redux';
-import reducers from './reducers';
+// import reducers from './reducers';
 
-var store = createStore();
+// var store = createStore();
 
-export default store
+// export default store;
