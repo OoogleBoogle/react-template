@@ -16,7 +16,7 @@ If you want to use this template, you'll need a few things.
 
 NPM, Node installed on your machine and a GitHub account. Also, Hub for the command line. You can find details [here](https://hub.github.com/).
 
-With that installed you need to name your project file with '-' for spaces. This will be the html doc <title> and also the name
+With that installed you need to name your project file with '-' for spaces. This will be the html doc title and also the name
 of your github repo.
 
 While in your project folder, clone this repo then in your terminal/command line 'npm run setup'.
