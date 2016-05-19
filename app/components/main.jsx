@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-const Hello = function() {
+
+class Main extends Component {
   return (
     <h1 className="pure-button pure-button-primary pure-u-2-5">Hello</h1>
   )
 }
 
-module.exports = Hello;
+export default Main;

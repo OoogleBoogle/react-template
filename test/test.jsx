@@ -1,3 +1,3 @@
-var React = require('react');
-var TestUtils = require('react-addons-test-utils');
-var should = require('chai').should();
+import React from 'react';
+import TestUtils from 'react-addons-test-utils';
+import {should} from 'chai';

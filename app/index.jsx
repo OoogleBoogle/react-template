@@ -1,7 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Hello from './components/starter'
+import Main from './components/main';
+import {Provider} from 'react-redux';
+import store from './redux/store';
 
 document.addEventListener('DOMContentLoaded', function() {
-  ReactDOM.render(<Hello />, document.querySelector('.app'));
+  ReactDOM.render(
+    <Provider store={store}>
+      <Main />
+    </Provider>, document.querySelector('.app'));
 });
