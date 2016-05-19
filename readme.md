@@ -16,11 +16,11 @@ If you want to use this template, you'll need a few things.
 
 NPM, Node installed on your machine and a GitHub account. Also, Hub for the command line. You can find details [here](https://hub.github.com/).
 
-First clone this repo.
+First clone this repo (git clone https://github.com/OoogleBoogle/react-template.git), rename the folder and swap out the readme.md for what you want. Then 'npm run setup:react' will install all the dependencies and initialize git and push. The repo will be named after the project file name.
 
 ### Scripts
 
-'npm run setup' => sets up the project, detailed above.
+'npm run setup:react' => sets up the project, detailed above.
 
 'npm start' => runs the dev server. Available on localhost/8080 and will refresh automatically.
 

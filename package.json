@@ -6,7 +6,7 @@
   "license": "UNLICENSED",
   "main": "index.js",
   "scripts": {
-    "setup": "rm -fr .git && npm i && git init && git add . && git commit -m \"Initial Commit\" && hub create && git push origin master && atom . && npm start",
+    "setup:react": "rm -fr .git && npm i && git init && git add . && git commit -m \"Initial Commit\" && hub create && git push origin master && atom . && npm start",
     "test": "mocha --compilers js:babel-register test/**/*.js*",
     "build": "webpack",
     "start": "webpack-dev-server",
