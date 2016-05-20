@@ -6,7 +6,6 @@
   "license": "ISC",
   "main": "index.js",
   "scripts": {
-    "setup:react": "rm -fr .git && npm i && git init && git add . && git commit -m \"Initial Commit\" && hub create && git push origin master && atom . && npm start",
     "test": "mocha --compilers js:babel-register test/**/*.js*",
     "build": "webpack",
     "start": "webpack-dev-server",
@@ -46,10 +45,12 @@
     "webpack-validator": ">=1.8.0"
   },
   "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
     "react": ">=15.0.2",
     "react-addons-update": ">=15.0.2",
     "react-dom": ">=15.0.2",
     "react-redux": ">=4.4.5",
+    "react-router": "^2.4.1",
     "redux": ">=3.5.2",
     "redux-thunk": "^2.1.0"
   }
