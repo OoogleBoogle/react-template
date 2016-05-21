@@ -8,7 +8,7 @@
   "scripts": {
     "test": "mocha --compilers js:babel-register test/**/*.js*",
     "build": "webpack",
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server & nodemon server.js",
     "stats": "webpack --profile --json > stats.json"
   },
   "babel": {
@@ -33,6 +33,7 @@
     "html-webpack-plugin": ">=2.17.0",
     "mocha": ">=2.4.5",
     "node-sass": ">=3.7.0",
+    "nodemon": ">=1.9.2",
     "postcss-loader": ">=0.9.1",
     "purecss": ">=0.6.0",
     "purifycss-webpack-plugin": ">=2.0.3",
@@ -45,15 +46,15 @@
     "webpack-validator": ">=1.8.0"
   },
   "dependencies": {
-    "body-parser": "^1.15.1",
-    "express": "^4.13.4",
-    "isomorphic-fetch": "^2.2.1",
-    "react": ">=15.0.2",
+    "body-parser": ">=1.15.1",
+    "express": ">=4.13.4",
+    "isomorphic-fetch": ">=2.2.1",
+    "react": ">=15.1.0",
     "react-addons-update": ">=15.0.2",
     "react-dom": ">=15.0.2",
     "react-redux": ">=4.4.5",
-    "react-router": "^2.4.1",
+    "react-router": ">=2.4.1",
     "redux": ">=3.5.2",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": ">=2.1.0"
   }
 }
