@@ -1,9 +1,10 @@
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
 
+app.set('port', process.env.NODE_PORT || 3000)
 app.use(bodyParser.json());
 
-app.listen(3000, () => {
-  console.log("Listeing on Port 3000");
-})
+app.listen(app.get('port'), () => {
+  console.log("Listeing on Port " + app.get('port'));
+});
