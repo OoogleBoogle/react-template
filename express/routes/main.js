@@ -1,13 +1,11 @@
-//import {express} from 'express';
 import express from 'express';
 const router = express.Router();
+import path from 'path';
+
+let index = path.resolve('build/index.html');
 
 router.get('/', (req, res) => {
-  res.send("Home route");
+  res.sendFile(index);
 });
-
-// router.get('/user', (req, res) => {
-//   res.send("User Route");
-// });
 
 module.exports = router;
