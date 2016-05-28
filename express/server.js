@@ -1,16 +1,18 @@
-const express = require('express');
+import express from 'express';
+import bodyParser from 'body-parser';
+import router from './routes/main';
+import path from 'path';
+
 const app = express();
-const bodyParser = require('body-parser');
+
+app.use(bodyParser.json());
+app.use(express.static('../build'));
+// console.log(a);
+app.get('/', router);
 
 app.set('port', process.env.NODE_PORT || 3000)
-app.use(bodyParser.json());
-
 app.listen(app.get('port'), () => {
   console.log("Listeing on Port " + app.get('port'));
 });
-
-app.get('/', (req, res) => {
-  res.send(200, "Whatever");
-})
 
 export default app;
