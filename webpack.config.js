@@ -48,7 +48,7 @@ const common = {
       {
         test: /\.jsx?$/,
         include: PATHS.app,
-        exclude: [/(node_modules)/, /\.\/express/, /\.\/express\/*/, /\.\/app\.js/],
+        exclude: /(node_modules)/,
         loader: 'babel-loader',
         query: {
             presets: ['es2015', 'react']
