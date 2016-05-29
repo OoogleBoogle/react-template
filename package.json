@@ -1,14 +1,14 @@
 {
-  "name": "test-name",
+  "name": "Full-Stack-React-Template",
   "version": "1.0.0",
   "description": "",
   "private": true,
   "license": "ISC",
-  "main": "index.js",
+  "main": "app/index.jsx",
   "scripts": {
     "test": "mocha --compilers js:babel-register test/**/*.js*",
     "build": "webpack",
-    "start": "webpack-dev-server & nodemon app.js",
+    "start": "webpack-dev-server",
     "stats": "webpack --profile --json > stats.json"
   },
   "babel": {
@@ -31,6 +31,7 @@
     "clean-webpack-plugin": ">=0.1.9",
     "css-loader": ">=0.23.1",
     "extract-text-webpack-plugin": ">=1.0.1",
+    "file-loader": "^0.8.5",
     "html-webpack-plugin": ">=2.17.0",
     "mocha": ">=2.4.5",
     "node-sass": ">=3.7.0",
@@ -41,6 +42,7 @@
     "react-addons-test-utils": ">=15.0.2",
     "sass-loader": ">=3.2.0",
     "style-loader": ">=0.13.1",
+    "url-loader": "^0.5.7",
     "webpack": ">=1.13.0",
     "webpack-dev-server": ">=1.14.1",
     "webpack-merge": ">=0.12.0",

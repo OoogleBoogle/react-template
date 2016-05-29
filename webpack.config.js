@@ -1,18 +1,29 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const packageData = require('./package.json');
 const validate = require('webpack-validator');
 const merge = require('webpack-merge');
 const parts = require('./lib/parts');
+const fs = require('fs');
 
+var nodeModules = {};
+fs.readdirSync(path.resolve(__dirname, 'node_modules'))
+    .filter(function(x) {
+        return ['.bin'].indexOf(x) === -1;
+    })
+    .forEach(function(mod) {
+        nodeModules[mod] = 'commonjs ' + mod;
+    });
 
 
 const PATHS = {
   app: path.join(__dirname, 'app'),
-  style: [
-    path.join(__dirname, 'node_modules', 'purecss'),
-    path.join(__dirname, 'app', './sass/main.scss')
-  ],
+  style: //[
+    // path.join(__dirname, 'node_modules', 'purecss'),
+    path.join(__dirname, 'app', '/sass/main.scss')
+  //]
+  ,
   build: path.join(__dirname, 'build')
 };
 
@@ -25,18 +36,20 @@ const common = {
     path: PATHS.build,
     filename: '[name].js'
   },
+  externals: nodeModules,
   plugins: [
     new HtmlWebpackPlugin({
       title: parts.setTitle(packageData.name),
-      template: 'index-template.ejs'
+      template: path.resolve('index-template.ejs')
     })
   ],
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
-        exclude: /(node_modules)/,
-        loader: 'babel',
+        include: PATHS.app,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
         query: {
             presets: ['es2015', 'react']
         }
@@ -45,6 +58,10 @@ const common = {
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
+  },
+  target: 'node',
+  node: {
+    fs: 'empty'
   }
 };
 
