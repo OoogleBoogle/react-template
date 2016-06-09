@@ -18,7 +18,7 @@ fs.readdirSync(path.resolve(__dirname, 'node_modules'))
 
 
 const PATHS = {
-  app: path.join(__dirname, 'app'),
+  app: path.join(__dirname, 'app/index'),
   style: //[
     // path.join(__dirname, 'node_modules', 'purecss'),
     path.join(__dirname, 'app', '/sass/main.scss')
@@ -47,7 +47,7 @@ const common = {
     loaders: [
       {
         test: /\.jsx?$/,
-        include: PATHS.app,
+        include: path.resolve('app/'),
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
@@ -59,10 +59,7 @@ const common = {
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
-  target: 'node',
-  node: {
-    fs: 'empty'
-  }
+  target: 'web',
 };
 
 var config;
@@ -98,7 +95,7 @@ switch(process.env.npm_lifecycle_event) {
     config = merge(
       common,
       {
-        devtool: 'eval-source-map'
+        devtool: 'source-map'
       },
       parts.setupCSS(PATHS.style),
       parts.devServer({

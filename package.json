@@ -8,7 +8,7 @@
   "scripts": {
     "test": "mocha --compilers js:babel-register test/**/*.js*",
     "build": "webpack",
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --inline",
     "stats": "webpack --profile --json > stats.json"
   },
   "babel": {
