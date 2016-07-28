@@ -17,7 +17,7 @@ app.get('/*', function() {
     res.sendFile(indexPage);
 });
 
-app.set('port', process.env.NODE_PORT || 3000);
+app.set('port', process.env.PORT || 3000);
 
 app.listen(app.get('port'),function() {
   console.log("Listeing on Port " + app.get('port'));
