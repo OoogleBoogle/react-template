@@ -9,7 +9,9 @@
     "test": "mocha --compilers js:babel-register test/**/*.js*",
     "build": "webpack",
     "start": "webpack-dev-server --inline",
-    "stats": "webpack --profile --json > stats.json"
+    "dev": "node server.js & webpack --watch",
+    "stats": "webpack --profile --json > stats.json",
+    "clean:all": "rm -rf dist"
   },
   "babel": {
     "presets": [
@@ -37,7 +39,6 @@
     "node-sass": ">=3.7.0",
     "nodemon": ">=1.9.2",
     "postcss-loader": ">=0.9.1",
-    "purecss": ">=0.6.0",
     "purifycss-webpack-plugin": ">=2.0.3",
     "react-addons-test-utils": ">=15.0.2",
     "sass-loader": ">=3.2.0",

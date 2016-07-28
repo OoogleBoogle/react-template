@@ -7,23 +7,9 @@ const merge = require('webpack-merge');
 const parts = require('./lib/parts');
 const fs = require('fs');
 
-var nodeModules = {};
-fs.readdirSync(path.resolve(__dirname, 'node_modules'))
-    .filter(function(x) {
-        return ['.bin'].indexOf(x) === -1;
-    })
-    .forEach(function(mod) {
-        nodeModules[mod] = 'commonjs ' + mod;
-    });
-
-
 const PATHS = {
-  app: path.join(__dirname, 'app/index'),
-  style: //[
-    // path.join(__dirname, 'node_modules', 'purecss'),
-    path.join(__dirname, 'app', '/sass/main.scss')
-  //]
-  ,
+  app: path.join(__dirname, 'app'),
+  style: path.join(__dirname, 'app', '/sass/main.scss'),
   build: path.join(__dirname, 'build')
 };
 
@@ -36,7 +22,6 @@ const common = {
     path: PATHS.build,
     filename: '[name].js'
   },
-  externals: nodeModules,
   plugins: [
     new HtmlWebpackPlugin({
       title: parts.setTitle(packageData.name),
@@ -47,8 +32,8 @@ const common = {
     loaders: [
       {
         test: /\.jsx?$/,
-        include: path.resolve('app/'),
-        exclude: /node_modules/,
+        include: PATHS.app,
+        exclude: /(node_modules)/,
         loader: 'babel-loader',
         query: {
             presets: ['es2015', 'react']
@@ -58,8 +43,7 @@ const common = {
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
-  },
-  target: 'web',
+  }
 };
 
 var config;
