@@ -14,9 +14,9 @@ const routes = (
 )
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Provider store={store}>
-      routes
+      {routes}
     </Provider>, document.querySelector('.app'));
 });

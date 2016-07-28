@@ -1,7 +1,7 @@
 import { redux, createStore, applyMiddleware } from 'redux';
 import { default as thunk } from 'redux-thunk';
-// import reducers from './reducers';
+import { changeTitle } from './reducers';
 
-// var store = createStore(reducers.NAME, applyMiddleware(thunk));
+var store = createStore(changeTitle, applyMiddleware(thunk));
 
-// export default store;
+export default store;
