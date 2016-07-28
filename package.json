@@ -8,6 +8,7 @@
   "scripts": {
     "test": "mocha --compilers js:babel-register test/**/*.js*",
     "build:prod": "npm run clean:all && mkdir -p dist && webpack -p --define process.env.NODE_ENV='\"production\"' --progress --colors",
+    "build": "webpack",
     "dev": "node server.js & webpack --watch",
     "stats": "webpack --profile --json > stats.json",
     "clean:all": "rm -rf dist"
